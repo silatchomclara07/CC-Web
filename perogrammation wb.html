@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art et Mode</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; 
+            color: #333;
+            overflow-x: hidden; 
+
+        header {
+            background: linear-gradient(135deg, #e63946, #f1fa8c);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1); 
+            color: #f1fa8c; 
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            margin-top: 30px;
+            display: none; 
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards; 
+        }
+
+        section.active {
+            display: block; 
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #1d3557; 
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        section h2:hover {
+            transform: scale(1.05); 
+        }
+
+        section p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #555;
+            text-align: justify; 
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section img:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #e63946; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 30px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9em;
+            }
+            section {
+                padding: 30px 10px;
+            }
+            section h2 {
+                font-size: 2em;
+            }
+            section p {
+                font-size: 1em;
+            }
+        }
+
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        form label {
+            margin: 10px 0 5px;
+            color: #1d3557; 
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #1d3557; 
+            outline: none; 
+        }
+
+        form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #1d3557; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        form button:hover {
+            background-color: #457b9d;
+            transform: scale(1.05)
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <h1>Art et Mode</h1>
+        <nav>
+            <a href="#" data-page="accueil">Accueil</a>
+            <a href="#" data-page="histoire">Histoire de la mode</a>
+            <a href="#" data-page="artistes">Artistes célèbres</a>
+            <a href="#" data-page="galerie">Galerie d'art</a>
+            <a href="#" data-page="tendances">Tendances actuelles</a>
+            <a href="#" data-page="conseils">Conseils de style</a>
+            <a href="#" data-page="evenements">Événements</a>
+            <a href="#" data-page="contact">Contact</a>
+            <a href="#" data-page="mentions">Mentions légales</a>
+            <a href="#" data-page="connexion">Connexion</a>
+        </nav>
+    </header>
+
+    <section id="accueil" class="active">
+        <h2>Un Voyage à travers l'Art et la Mode</h2>
+        <p>Plongez dans un monde où la créativité et l'esthétique se rencontrent, où chaque œuvre raconte une histoire unique.</p>
+        <img src="https://via.placeholder.com/1200x600?text=Art+et+Mode" alt="Art et Mode" class="hero-image">
+    </section>
+
+    <section id="histoire">
+        <h2>La Mode à Travers les Âges</h2>
+        <p>De la Renaissance aux tendances contemporaines, la mode a toujours été un miroir de la société et de l'art. Explorez les époques qui ont façonné notre style.</p>
+        <img src="https://via.placeholder.com/1200x600?text=Histoire+de+la+Mode" alt="Histoire de la mode">
+        <p>Chaque décennie apporte ses propres silhouettes, couleurs et textures, capturant l'essence d'une époque.</p>
+    </section>
+
+    <section id="artistes">
+        <h2>Les Maîtres de l'Art et de la Mode</h2>
+        <p>Découvrez les artistes emblématiques dont les créations continuent d'inspirer le monde de la mode.</p>
+        <img src="https://via.placeholder.com/1200x600?text=Artistes+C%C3%A9l%C3%A8bres" alt="Artistes célèbres">
+        <p>De Van Gogh à Coco Chanel, ces visionnaires ont redéfini les normes de beauté et d'élégance.</p>
+    </section>
+
+    <section id="galerie">
+        <h2>Une Galerie d'Émotions</h2>
+        <p>Explorez une sélection d'œuvres d'art qui célèbrent l'union entre la mode et l'art. Chaque pièce est une invitation à rêver.</p>
+        <img src="https://via.placeholder.com/1200x600?text=Galerie+d'Art" alt="Galerie d'art">
+        <p>Des tableaux vibrants aux sculptures audacieuses, chaque œuvre nous parle d'une manière unique.</p>
+    </section>
+
+    <section id="tendances">
+        <h2>Tendances Éblouissantes</h2>
+        <p>Restez à l'affût des dernières tendances qui révolutionnent le monde de la mode, alliant innovation et tradition.</p>
+        <img src="https://via.placeholder.com/1200x600?text=Tendances+Actuelles" alt="Tendances actuelles">
+        <p>Des combinaisons audacieuses aux motifs captivants, la mode d'aujourd'hui est un spectacle à ne pas manquer.</p>
+    </section>
+
+    <section id="conseils">
+        <h2>Élégance et Style</h2>
+        <p>Apprenez à maîtriser l'art du style avec nos conseils pratiques pour créer des looks qui inspirent confiance et créativité.</p>
+        <img src="https://via.placeholder.com/1200x600?text=Conseils+de+Style" alt="Conseils de style">
+        <p>Des astuces de mix-and-match aux choix d'accessoires, transformez votre garde-robe en une œuvre d'art.</p>
+    </section>
+
+    <section id="evenements">
+        <h2>Événements Incontournables</h2>
+        <p>Ne manquez pas les événements culturels et artistiques qui rythment notre calendrier, célébrant l'art et la mode.</p>
+        <img src="https://via.placeholder.com/1200x600?text=%C3%89v%C3%A9nements" alt="Événements">
+        <p>Des défilés aux expositions, chaque événement est une fête pour les sens.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-Nous</h2>
+        <p>Nous aimerions entendre vos pensées et suggestions. N'hésitez pas à nous contacter pour toute question !</p>
+        <form>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </section>
+
+    <section id="mentions">
+        <h2>Mentions Légales</h2>
+        <p>Ce site est un projet éducatif, conçu pour explorer la beauté de l'art et de la mode au XXIe siècle.</p>
+    </section>
+
+    <section id="connexion">
+        <h2>Connexion</h2>
+        <p>Connectez-vous pour accéder à votre compte et découvrir encore plus de contenu inspirant.</p>
+        <form>
+            <label for="login">Login :</label>
+            <input type="text" id="login" name="login" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="btn">Se connecter</button>
+        </form>
+    </section>
+
+   
+    <footer>
+        <p>&copy; 2023 Art et Mode</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(pageId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+
+        showPage('accueil');
+    </script>
+</body>
+</html>
